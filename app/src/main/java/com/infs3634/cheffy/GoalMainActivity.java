@@ -1,4 +1,17 @@
 package com.infs3634.cheffy;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +23,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +32,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class GoalMainActivity extends AppCompatActivity {
     private boolean mTwoPane;
-    private String Tag = "GoalMainActivity";
+    private String TAG = "GoalMainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

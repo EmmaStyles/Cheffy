@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        recipeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                launchRecipesActivity("MealsMainActivity");
+            }
+        });
 
 
     }
