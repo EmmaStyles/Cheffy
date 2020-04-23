@@ -57,9 +57,7 @@ public class RecipeFragment extends Fragment {
                         }
                     }
                     updateData();
-                    RecipeFragment.this.getActivity().setTitle(mMeal.getStrMeal());
                 }
-
                 @Override
                 public void onFailure(Call<MealResponse> call, Throwable t) {
 
@@ -77,7 +75,7 @@ public class RecipeFragment extends Fragment {
 
     private void updateData(){
         View rootView = getView();
-        if (mMeal != null){
+        if (rootView != null && mMeal != null){
             ((TextView) rootView.findViewById(R.id.recipeName)).setText(mMeal.getStrMeal());
             ((TextView) rootView.findViewById(R.id.ingredient1)).setText(mMeal.getStrIngredient1());
             ((TextView) rootView.findViewById(R.id.ingredient2)).setText(mMeal.getStrIngredient2());
@@ -100,8 +98,6 @@ public class RecipeFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.measure9)).setText(mMeal.getStrMeasure9());
             ((TextView) rootView.findViewById(R.id.measure10)).setText(mMeal.getStrMeasure10());
             ((TextView) rootView.findViewById(R.id.instructionsTextView)).setText(mMeal.getStrInstructions());
-
-
         }
     }
 }
