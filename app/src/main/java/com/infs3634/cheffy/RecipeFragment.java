@@ -1,29 +1,22 @@
 package com.infs3634.cheffy;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
+import androidx.fragment.app.Fragment;
+import androidx.room.Room;
+
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RecipeFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
     String TAG = "RecipeFragment";
     private String mealID;
     private Meal mMeal;
+    private MealDatabase mealDatabase;
 
     public RecipeFragment(){
 
@@ -32,37 +25,23 @@ public class RecipeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mealDatabase = Room.databaseBuilder(getContext(), MealDatabase.class, "meal-database").build();
         if (getArguments().containsKey((ARG_ITEM_ID))){
+            new GetMealDatabaseTask().execute(getArguments().getString(ARG_ITEM_ID));
+        }
+    }
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("https://www.themealdb.com/api/json/v1/1/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+    private class GetMealDatabaseTask extends AsyncTask<String, Void, Meal>{
 
-            RecipeAPI recipeAPI = retrofit.create(RecipeAPI.class);
+        @Override
+        protected Meal doInBackground(String... ids) {
+            return mealDatabase.mealDao().getMeal(ids[0]);
+        }
 
-            mealID = getArguments().getString(ARG_ITEM_ID);
-            Log.d(TAG, "letter is " + mealID);
-            //need to somehow retreive what letter was cicked in mealsmainactivity and pass it to the following method
-            Call<MealResponse> mealsCall = recipeAPI.getRecipeByID(mealID);
-            mealsCall.enqueue(new Callback<MealResponse>() {
-                @Override
-                public void onResponse(Call<MealResponse> call, Response<MealResponse> response) {
-                    List<Meal> meals = response.body().getMeals();
-                    for (Meal meal : meals){
-                        if(meal.getIdMeal().equals(getArguments().getString(ARG_ITEM_ID))){
-                            mMeal = meal;
-                            break;
-                        }
-                    }
-                    updateData();
-                }
-                @Override
-                public void onFailure(Call<MealResponse> call, Throwable t) {
-
-                }
-            });
+        @Override
+        protected void onPostExecute(Meal meal){
+            mMeal = meal;
+            updateData();
         }
     }
 
@@ -75,7 +54,7 @@ public class RecipeFragment extends Fragment {
 
     private void updateData(){
         View rootView = getView();
-        if (rootView != null && mMeal != null){
+        if (rootView!=null && mMeal != null){
             ((TextView) rootView.findViewById(R.id.recipeName)).setText(mMeal.getStrMeal());
             ((TextView) rootView.findViewById(R.id.ingredient1)).setText(mMeal.getStrIngredient1());
             ((TextView) rootView.findViewById(R.id.ingredient2)).setText(mMeal.getStrIngredient2());
@@ -99,5 +78,6 @@ public class RecipeFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.measure10)).setText(mMeal.getStrMeasure10());
             ((TextView) rootView.findViewById(R.id.instructionsTextView)).setText(mMeal.getStrInstructions());
         }
+
     }
 }
