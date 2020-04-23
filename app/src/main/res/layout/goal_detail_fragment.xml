@@ -46,4 +46,13 @@
         android:text="Complete?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGoalText" />
+
+    <Switch
+        android:id="@+id/switchGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="71dp"
+        android:text="Completed?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbGoal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.timqi.sectorprogressview.ColorfulRingProgressView;
+
 public class MainActivity extends AppCompatActivity {
     private Button mButton;
     private Button recipeButton;
+    private ColorfulRingProgressView crpv;
     public static final String EXTRA_MESSAGE = "com.infs3634.cheffy.MESSAGE";
     private String TAG = "MainActivity";
 
@@ -19,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mButton = findViewById(R.id.btnGoals);
         recipeButton = findViewById(R.id.recipesButton);
+        crpv = findViewById(R.id.crpv);
+        // finish percent of progress
+        crpv.setPercent(Goal.countCheckedGoals());
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override

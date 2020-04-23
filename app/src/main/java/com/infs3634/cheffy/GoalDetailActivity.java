@@ -1,10 +1,13 @@
 package com.infs3634.cheffy;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GoalDetailActivity extends AppCompatActivity {
+    private Goal mGoal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
