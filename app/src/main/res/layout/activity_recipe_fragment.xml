@@ -145,11 +145,11 @@
         android:id="@+id/instructionsTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Instructions"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toStartOf="@+id/ingredient5"
-        app:layout_constraintTop_toBottomOf="@+id/ingredient5" />
+        app:layout_constraintStart_toStartOf="@+id/ingredient10"
+        app:layout_constraintTop_toBottomOf="@+id/ingredient10" />
 
     <TextView
         android:id="@+id/instructionsTextView"
@@ -164,12 +164,10 @@
         android:id="@+id/ingredient6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/measure1"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientsTitle" />
+        app:layout_constraintStart_toStartOf="@+id/ingredient5"
+        app:layout_constraintTop_toBottomOf="@+id/ingredient5" />
 
     <TextView
         android:id="@+id/ingredient7"
