@@ -30,7 +30,6 @@ public class GoalDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //switchGoal.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
         if(getArguments().containsKey(ARG_ITEM_ID)) {
             mGoal = Goal.getGoal(getArguments().getString(ARG_ITEM_ID));
             this.getActivity().setTitle("Goal " + mGoal.getGoalId());

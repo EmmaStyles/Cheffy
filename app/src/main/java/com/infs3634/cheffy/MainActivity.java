@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         recipeButton = findViewById(R.id.recipesButton);
         crpv = findViewById(R.id.crpv);
         // finish percent of progress
-        crpv.setPercent(Goal.countCheckedGoals());
+        int count = Goal.countCheckedGoals();
+        crpv.setPercent(count);
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
