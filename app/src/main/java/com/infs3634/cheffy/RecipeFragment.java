@@ -85,6 +85,5 @@ public class RecipeFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.measure10)).setText(mMeal.getStrMeasure10());
             ((TextView) rootView.findViewById(R.id.instructionsTextView)).setText(mMeal.getStrInstructions());
         }
-
     }
 }
