@@ -10,17 +10,18 @@
     <Spinner
         android:id="@+id/letterSpinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList"
         android:layout_width="350dp"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/recyclerview_background" />
 
     <ScrollView
         android:id="@+id/recipe_container"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="3" />
 
 </LinearLayout>
