@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnGoals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/button_background"
         android:text="Goals"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,12 +46,23 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         app:bgColor="#e1e1e1"
-        app:fgColorEnd="#ff4800"
-        app:fgColorStart="#ffe400"
+        app:fgColorEnd="#3ec787"
+        app:fgColorStart="#03DAC5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/recipesButton"
+        app:layout_constraintTop_toBottomOf="@+id/btnAchievements"
         app:startAngle="0"
         app:strokeWidth="21dp" />
+
+    <Button
+        android:id="@+id/btnAchievements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_background"
+        android:text="Achievements"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipesButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
