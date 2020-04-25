@@ -33,6 +33,7 @@ public class RecipeFragment extends Fragment {
         }
     }
 
+
     private class GetMealDatabaseTask extends AsyncTask<String, Void, Meal>{
 
         @Override

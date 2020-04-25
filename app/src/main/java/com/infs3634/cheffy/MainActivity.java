@@ -12,6 +12,7 @@ import com.timqi.sectorprogressview.ColorfulRingProgressView;
 
 import static com.infs3634.cheffy.Level.getLevels;
 
+//first activity that user sees on startup
 public class MainActivity extends AppCompatActivity {
     private Button mButton;
     private Button recipeButton;
@@ -26,11 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //three buttons that navigate to separate activities. goals, recipes, and achievements
+
         mButton = findViewById(R.id.btnGoals);
         recipeButton = findViewById(R.id.recipesButton);
         achievementsButton = findViewById(R.id.btnAchievements);
         mLevel = findViewById(R.id.tvLevel);
         crpv = findViewById(R.id.crpv);
+
         // finish percent of progress
         //levelCounter = Goal.countCheckedGoals();
         levelCounter = 75;
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if(levelCounter >74){
             mLevel.setText(getLevels().get(3).getLevel());
         }
+
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    
     private void launchDetailActivity(String message){
         Intent intent = new Intent(this, GoalMainActivity.class);
         intent.putExtra(EXTRA_MESSAGE, message);
