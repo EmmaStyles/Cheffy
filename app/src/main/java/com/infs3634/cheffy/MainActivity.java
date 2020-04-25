@@ -31,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
         achievementsButton = findViewById(R.id.btnAchievements);
         mLevel = findViewById(R.id.tvLevel);
         crpv = findViewById(R.id.crpv);
-        // finish percent of progress
+
         //levelCounter = Goal.countCheckedGoals();
-        levelCounter = 75;
+
+        //FEEL FREE TO CHANGE LEVELCOUNTER TO SEE DIFFERENT LEVELS
+        //CHOOSE A NUMBER BETWEEN 0-100 (inclusive)
+        levelCounter = 45;
         crpv.setPercent(levelCounter);
 
         if(levelCounter <25){

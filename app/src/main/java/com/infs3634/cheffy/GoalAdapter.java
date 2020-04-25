@@ -2,20 +2,26 @@ package com.infs3634.cheffy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import static android.content.Context.CONTEXT_IGNORE_SECURITY;
+import static android.content.Context.MODE_PRIVATE;
+
 public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder> {
     private GoalMainActivity mParentActivity;
     private List<Goal> mGoals;
     private boolean mTwoPane;
+
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -36,19 +42,46 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
         }
     };
 
+
     public GoalAdapter(GoalMainActivity parent, List<Goal> goals, boolean twoPane) {
         mParentActivity = parent;
         mGoals = goals;
         mTwoPane = twoPane;
     }
 
-    public static class GoalViewHolder extends RecyclerView.ViewHolder  {
+    public static class GoalViewHolder extends RecyclerView.ViewHolder {
         public TextView goalText;
         public TextView goalId;
+        public Switch switchGoal;
+        public SharedPreferences preferences;
         public GoalViewHolder(View v) {
             super(v);
             goalText = v.findViewById(R.id.tvGoal);
             goalId = v.findViewById(R.id.tvGoalId);
+            switchGoal = v.findViewById(R.id.switchGoal);
+
+            //to save whether switch is on or not
+            //not sure how to make this work
+//            SharedPreferences preferences = Context.getSharedPreferences("Save", MODE_PRIVATE);
+//            switchGoal.setChecked(preferences.getBoolean("value", false));
+//            switchGoal.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    if (switchGoal.isChecked()) {
+//                        SharedPreferences.Editor editor = preferences.edit();
+//                        editor.putBoolean("value", true);
+//                        editor.apply();
+//                        switchGoal.setChecked(true);
+//                        //mGoal.setGoalBoolean(true);
+//                    } else {
+//                        SharedPreferences.Editor editor = preferences.edit();
+//                        editor.putBoolean("value", false);
+//                        editor.apply();
+//                        switchGoal.setChecked(false);
+//                        //mGoal.setGoalBoolean(false);
+//                    }
+//                }
+//            });
         }
     }
     @Override
