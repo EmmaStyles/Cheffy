@@ -10,6 +10,8 @@
         android:id="@+id/ivWoman"
         android:layout_width="138dp"
         android:layout_height="263dp"
+        android:layout_marginBottom="200dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Achievements"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ivWoman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +34,7 @@
         android:id="@+id/tvBadgeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="200dp"
         android:text="BADGES"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
@@ -41,26 +44,45 @@
         app:layout_constraintTop_toBottomOf="@+id/ivWoman" />
 
     <ImageView
-        android:id="@+id/ivWorld"
-        android:layout_width="146dp"
-        android:layout_height="116dp"
-        android:src="@android:drawable/ic_menu_mapmode"
-        android:tint="#214BE4"
+        android:id="@+id/ivStar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="#E5F1EB"
+        android:src="@drawable/star_icon_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvBadgeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvBadgeLabel" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="#E5F1EB"
+        android:src="@drawable/world_icon_transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvBadgeLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBadgeLabel" />
 
-    <ImageView
-        android:id="@+id/ivStar"
-        android:layout_width="146dp"
-        android:layout_height="116dp"
-        android:background="#FFFFFF"
-        android:src="@android:drawable/btn_star"
-        android:tint="#FBD92D"
+    <TextView
+        android:id="@+id/tvWorld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your cooking is worldly!"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvBadgeLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBadgeLabel" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/tvStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are a star baker!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivStar"
+        app:layout_constraintStart_toStartOf="@+id/ivStar"
+        app:layout_constraintTop_toBottomOf="@+id/ivStar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
