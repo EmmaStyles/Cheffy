@@ -79,4 +79,5 @@ public class MealsAdapter extends RecyclerView.Adapter<MealsAdapter.MealsViewHol
         this.meals.addAll(meals);
         notifyDataSetChanged();
     }
+
 }

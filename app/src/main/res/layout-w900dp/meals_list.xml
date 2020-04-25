@@ -7,16 +7,31 @@
     android:orientation="horizontal"
     android:showDividers="middle">
 
-    <Spinner
-        android:id="@+id/letterSpinner"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvList"
-        android:layout_width="350dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/recyclerview_background" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Filter by first letter:" />
+
+        <Spinner
+            android:id="@+id/letterSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvList"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/recyclerview_background" />
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/recipe_container"

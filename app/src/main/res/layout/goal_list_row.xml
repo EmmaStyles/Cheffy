@@ -2,19 +2,18 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="#3ec787"
     android:clickable="true"
     android:focusable="true"
-    android:layout_margin="8dp"
-    android:background="#f0f0f0"
-    app:cardCornerRadius="20dp"
-    >
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f0f0f0">
+        android:background="#3ec787">
 
         <TextView
             android:id="@+id/tvGoalId"
@@ -22,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toEndOf="@+id/tvGoalNoRV"
             app:layout_constraintTop_toTopOf="@+id/tvGoalNoRV" />
 
@@ -34,6 +34,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvGoalId" />
@@ -46,6 +47,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:text="Goal Number"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Completed?"
+            android:textColor="#FFFFFF"
             android:textOn="Completed!"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvGoal" />

@@ -84,6 +84,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
 //            });
         }
     }
+
     @Override
     public GoalAdapter.GoalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_list_row, parent, false);
