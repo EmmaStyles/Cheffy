@@ -12,16 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".RecipeFragment"></activity>
-        <activity android:name=".MealsMainActivity" />
+
+        <activity android:name=".RecipeActivity"
+            android:parentActivityName=".MealsMainActivity"
+        />
+
+        <activity android:name=".MealsMainActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
         <activity
             android:name=".GoalMainActivity"
             android:label="@string/title_goal_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".GoalDetailActivity"
             android:label="@string/title_goal_detail"
             android:parentActivityName=".GoalMainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.infs3634.cheffy.GoalMainActivity" />

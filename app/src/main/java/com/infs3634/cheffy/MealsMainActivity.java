@@ -36,6 +36,7 @@ public class MealsMainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meals_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (findViewById(R.id.recipe_container) != null){
             twoPane = true;

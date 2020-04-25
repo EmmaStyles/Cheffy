@@ -40,6 +40,8 @@ public class GoalMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goal_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         if (findViewById(R.id.goal_detail_container) != null) {
             mTwoPane = true;
         }
