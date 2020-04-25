@@ -3,6 +3,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,14 +28,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class GoalMainActivity extends AppCompatActivity {
     private boolean mTwoPane;
     private String TAG = "GoalMainActivity";
+    private Switch switchGoal;
+    private Goal mGoal;
+    public static final String ARG_ITEM_ID = "item_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +59,6 @@ public class GoalMainActivity extends AppCompatActivity {
         mTwoPane = findViewById(R.id.goal_detail_container) != null;
         RecyclerView.Adapter mAdapter = new GoalAdapter(this, Goal.getGoals(), mTwoPane);
         mRecyclerView.setAdapter(mAdapter);
+
     }
 }

@@ -22,7 +22,6 @@ import static android.content.Context.MODE_PRIVATE;
 public class GoalDetailFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
     private Goal mGoal;
-    private Switch switchGoal;
 
     public GoalDetailFragment() {
     }
@@ -39,27 +38,7 @@ public class GoalDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.goal_detail_fragment, container, false);
-        switchGoal = (Switch) rootView.findViewById(R.id.switchGoal);
-        SharedPreferences preferences = this.getContext().getSharedPreferences("save", Context.MODE_PRIVATE);
-        switchGoal.setChecked(preferences.getBoolean("value", false));
-        switchGoal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (switchGoal.isChecked()) {
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putBoolean("value", true);
-                    editor.apply();
-                    switchGoal.setChecked(true);
-                    mGoal.setGoalBoolean(true);
-                } else {
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putBoolean("value", false);
-                    editor.apply();
-                    switchGoal.setChecked(false);
-                    mGoal.setGoalBoolean(false);
-                }
-            }
-        });
+
         if(mGoal != null) {
             ((TextView) rootView.findViewById(R.id.tvGoalText)).setText(mGoal.getGoalText());
             ((TextView) rootView.findViewById(R.id.tvGoalNumber)).setText(mGoal.getGoalId());
