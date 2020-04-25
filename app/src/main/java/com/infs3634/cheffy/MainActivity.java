@@ -6,14 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.timqi.sectorprogressview.ColorfulRingProgressView;
+
+import static com.infs3634.cheffy.Level.getLevels;
 
 public class MainActivity extends AppCompatActivity {
     private Button mButton;
     private Button recipeButton;
     private Button achievementsButton;
     private ColorfulRingProgressView crpv;
+    private TextView mLevel;
+    public int levelCounter;
     public static final String EXTRA_MESSAGE = "com.infs3634.cheffy.MESSAGE";
     private String TAG = "MainActivity";
 
@@ -24,10 +29,25 @@ public class MainActivity extends AppCompatActivity {
         mButton = findViewById(R.id.btnGoals);
         recipeButton = findViewById(R.id.recipesButton);
         achievementsButton = findViewById(R.id.btnAchievements);
+        mLevel = findViewById(R.id.tvLevel);
         crpv = findViewById(R.id.crpv);
         // finish percent of progress
-        int count = Goal.countCheckedGoals();
-        crpv.setPercent(75);
+        //levelCounter = Goal.countCheckedGoals();
+        levelCounter = 75;
+        crpv.setPercent(levelCounter);
+
+        if(levelCounter <25){
+            mLevel.setText(getLevels().get(0).getLevel());
+        }
+        if(levelCounter <50 && levelCounter>24){
+            mLevel.setText(getLevels().get(1).getLevel());
+        }
+        if(levelCounter <75 && levelCounter >49){
+            mLevel.setText(getLevels().get(2).getLevel());
+        }
+        if(levelCounter >74){
+            mLevel.setText(getLevels().get(3).getLevel());
+        }
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override

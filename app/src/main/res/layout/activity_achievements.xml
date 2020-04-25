@@ -21,26 +21,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Achievements"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toTopOf="@+id/ivWoman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvLevelLabel"
+        android:id="@+id/tvBadgeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Level:"
-        app:layout_constraintStart_toStartOf="@+id/tvAchievementsHeading"
+        android:layout_marginBottom="100dp"
+        android:text="BADGES"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivWoman" />
 
-    <TextView
-        android:id="@+id/tvLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="@+id/tvAchievementsHeading"
-        app:layout_constraintTop_toBottomOf="@+id/ivWoman" />
+    <ImageView
+        android:id="@+id/ivWorld"
+        android:layout_width="146dp"
+        android:layout_height="116dp"
+        android:src="@android:drawable/ic_menu_mapmode"
+        android:tint="#214BE4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvBadgeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBadgeLabel" />
+
+    <ImageView
+        android:id="@+id/ivStar"
+        android:layout_width="146dp"
+        android:layout_height="116dp"
+        android:background="#FFFFFF"
+        android:src="@android:drawable/btn_star"
+        android:tint="#FBD92D"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvBadgeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvBadgeLabel" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
