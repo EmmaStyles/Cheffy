@@ -8,10 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 
 public class RecipeFragment extends Fragment {
@@ -58,10 +55,6 @@ public class RecipeFragment extends Fragment {
     private void updateData(){
         View rootView = getView();
         if (rootView!=null && mMeal != null){
-            Glide.with(rootView)
-                    .load(mMeal.getStrMealThumb() + "/preview")
-                    .override(200,200)
-                    .into((ImageView)rootView.findViewById(R.id.recipeImageView));
             ((TextView) rootView.findViewById(R.id.recipeName)).setText(mMeal.getStrMeal());
             ((TextView) rootView.findViewById(R.id.ingredient1)).setText(mMeal.getStrIngredient1());
             ((TextView) rootView.findViewById(R.id.ingredient2)).setText(mMeal.getStrIngredient2());
