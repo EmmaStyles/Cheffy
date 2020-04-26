@@ -22,6 +22,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class MealsMainActivity extends AppCompatActivity{
     private boolean twoPane;
     private String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "v", "w", "y"};
@@ -36,6 +37,8 @@ public class MealsMainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meals_main);
+
+        //back button on action bar. returns user back to main activity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (findViewById(R.id.recipe_container) != null){
@@ -54,16 +57,23 @@ public class MealsMainActivity extends AppCompatActivity{
         letterSpinner.setAdapter(letterSpinnerAdapter);
 
 
-
+        //spinner which detects which letter was clicked
         letterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //assigns letterSelected to the letter that was clicked
                 letterSelected = letterSpinner.getItemAtPosition(position).toString();
+
+                //debug statement
                 Log.d(TAG, "letter selected is " + letterSelected);
+
+                //passes letterSelected to RecipeFragment
                 Bundle bundle = new Bundle();
                 bundle.putString(RecipeFragment.ARG_ITEM_ID, letterSelected);
                 RecipeFragment rf = new RecipeFragment();
                 rf.setArguments(bundle);
+
+                //builds and executes the database
                 mealDatabase = Room.databaseBuilder(getApplicationContext(), MealDatabase.class, "meal-database").build();
                 new GetMealDatabaseTask().execute();
                 new GetMealTask().execute();
@@ -82,6 +92,8 @@ public class MealsMainActivity extends AppCompatActivity{
         @Override
         protected List<Meal> doInBackground(Void... voids) {
             try{
+                //makes call to TheMealDB API
+
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("https://www.themealdb.com/api/json/v1/1/")
                         .addConverterFactory(GsonConverterFactory.create())
