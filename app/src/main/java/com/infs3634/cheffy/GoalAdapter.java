@@ -27,6 +27,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
         @Override
         public void onClick(View v) {
             Goal goal = (Goal) v.getTag();
+            //chooses to display fragment view or single activity depending on display size
             if(mTwoPane) {
                 Bundle arguments = new Bundle();
                 arguments.putString(GoalDetailFragment.ARG_ITEM_ID, goal.getGoalId());
