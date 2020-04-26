@@ -43,23 +43,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivWoman" />
 
-    <ImageView
-        android:id="@+id/ivStar"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="#E5F1EB"
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/circleStar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#00E5F1EB"
         android:src="@drawable/star_icon_transparent"
+        app:civ_border_color="#E5F1EB"
+        app:civ_border_width="2dp"
+        app:civ_shadow="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvBadgeLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvBadgeLabel" />
 
-    <ImageView
-        android:id="@+id/ivWorld"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="#E5F1EB"
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/circleWorld"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#00E5F1EB"
         android:src="@drawable/world_icon_transparent"
+        app:civ_border_color="#E5F1EB"
+        app:civ_border_width="2dp"
+        app:civ_shadow="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvBadgeLabel"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,9 +77,9 @@
         android:layout_height="wrap_content"
         android:text="Your cooking is worldly!"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ivWorld"
-        app:layout_constraintStart_toStartOf="@+id/ivWorld"
-        app:layout_constraintTop_toBottomOf="@+id/ivWorld" />
+        app:layout_constraintEnd_toEndOf="@+id/circleWorld"
+        app:layout_constraintStart_toStartOf="@+id/circleWorld"
+        app:layout_constraintTop_toBottomOf="@+id/circleWorld" />
 
     <TextView
         android:id="@+id/tvStar"
@@ -81,8 +87,8 @@
         android:layout_height="wrap_content"
         android:text="You are a star baker!"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ivStar"
-        app:layout_constraintStart_toStartOf="@+id/ivStar"
-        app:layout_constraintTop_toBottomOf="@+id/ivStar" />
+        app:layout_constraintEnd_toEndOf="@+id/circleStar"
+        app:layout_constraintStart_toStartOf="@+id/circleStar"
+        app:layout_constraintTop_toBottomOf="@+id/circleStar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
