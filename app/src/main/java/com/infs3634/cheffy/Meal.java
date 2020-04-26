@@ -8,6 +8,8 @@ import java.io.Serializable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+//meal class generated from using jsonschema2pojo
+
 @Entity
 public class Meal implements Serializable
 {

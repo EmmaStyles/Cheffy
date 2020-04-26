@@ -3,16 +3,16 @@ package com.infs3634.cheffy;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+//adapter class for meals
 
 public class MealsAdapter extends RecyclerView.Adapter<MealsAdapter.MealsViewHolder> {
     private MealsMainActivity parentActivity;
@@ -22,7 +22,10 @@ public class MealsAdapter extends RecyclerView.Adapter<MealsAdapter.MealsViewHol
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            //gets meal object
             Meal meal = (Meal)v.getTag();
+
+            //chooses to display fragment view or single activity depending on display size
             if (twoPane == true){
                 Bundle arguments = new Bundle();
                 arguments.putString(RecipeFragment.ARG_ITEM_ID, meal.getIdMeal());

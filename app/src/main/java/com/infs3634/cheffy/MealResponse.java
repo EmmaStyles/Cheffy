@@ -24,6 +24,7 @@ public class MealResponse implements Serializable
         this.meals = meals;
     }
 
+    //returns a list of meals
     public List<Meal> getMeals() {
         return meals;
     }

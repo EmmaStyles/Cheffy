@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 
+//displays the details of an individual recipe such as name, ingredients, and instructions
+
 public class RecipeFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
     String TAG = "RecipeFragment";
@@ -28,6 +30,8 @@ public class RecipeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mealDatabase = Room.databaseBuilder(getContext(), MealDatabase.class, "meal-database").build();
+
+        //retrieves the letterSelected from MealsMainActivity
         if (getArguments().containsKey((ARG_ITEM_ID))){
             new GetMealDatabaseTask().execute(getArguments().getString(ARG_ITEM_ID));
         }
