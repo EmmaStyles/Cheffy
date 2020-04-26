@@ -45,8 +45,8 @@
 
     <ImageView
         android:id="@+id/ivStar"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:background="#E5F1EB"
         android:src="@drawable/star_icon_transparent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,8 +56,8 @@
 
     <ImageView
         android:id="@+id/ivWorld"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:background="#E5F1EB"
         android:src="@drawable/world_icon_transparent"
         app:layout_constraintBottom_toBottomOf="parent"

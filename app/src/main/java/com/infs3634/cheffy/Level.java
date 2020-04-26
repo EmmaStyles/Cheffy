@@ -3,6 +3,7 @@ package com.infs3634.cheffy;
 import java.util.ArrayList;
 import java.util.List;
 
+//Level object that determines which level you are based on the number of goals you've completed
 public class Level {
     public String level;
 

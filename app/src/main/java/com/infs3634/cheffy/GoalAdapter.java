@@ -17,6 +17,7 @@ import java.util.List;
 import static android.content.Context.CONTEXT_IGNORE_SECURITY;
 import static android.content.Context.MODE_PRIVATE;
 
+//Adapter class for Goals
 public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder> {
     private GoalMainActivity mParentActivity;
     private List<Goal> mGoals;
@@ -60,8 +61,9 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
             goalId = v.findViewById(R.id.tvGoalId);
             switchGoal = v.findViewById(R.id.switchGoal);
 
-            //to save whether switch is on or not
-            //not sure how to make this work
+            //This piece of code was to save whether switch is on or not.
+            //Can't get it to work but it was supposed to set goalBoolean (in Goals) to true if switch turned on
+//
 //            SharedPreferences preferences = Context.getSharedPreferences("Save", MODE_PRIVATE);
 //            switchGoal.setChecked(preferences.getBoolean("value", false));
 //            switchGoal.setOnClickListener(new View.OnClickListener() {

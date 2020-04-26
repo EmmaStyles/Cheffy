@@ -12,6 +12,7 @@ import com.timqi.sectorprogressview.ColorfulRingProgressView;
 
 import static com.infs3634.cheffy.Level.getLevels;
 
+// Class for main activity of app
 public class MainActivity extends AppCompatActivity {
     private Button mButton;
     private Button recipeButton;
@@ -32,11 +33,14 @@ public class MainActivity extends AppCompatActivity {
         mLevel = findViewById(R.id.tvLevel);
         crpv = findViewById(R.id.crpv);
 
+        //To set graph and level on main activity
+
+        //This was used to get the number of goals completed, but couldn't get it to work
         //levelCounter = Goal.countCheckedGoals();
 
-        //FEEL FREE TO CHANGE LEVELCOUNTER TO SEE DIFFERENT LEVELS
+        //******FEEL FREE TO CHANGE LEVELCOUNTER TO SEE DIFFERENT LEVELS AND GRAPH CHANGE********
         //CHOOSE A NUMBER BETWEEN 0-100 (inclusive)
-        levelCounter = 45;
+        levelCounter = 70;
         crpv.setPercent(levelCounter);
 
         if(levelCounter <25){
@@ -72,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 launchAchievementsActivity("AchievementsActivity");
             }
         });
-
     }
 
     private void launchDetailActivity(String message){

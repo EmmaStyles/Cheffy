@@ -3,6 +3,7 @@ package com.infs3634.cheffy;
 import java.util.ArrayList;
 import java.util.List;
 
+// Class that established Goal object
 public class Goal {
     public static final String ARG_ITEM_ID = "item_id";
     public String goalId;
@@ -66,6 +67,8 @@ public class Goal {
         return goalId;
     }
 
+    //CountCheckedGoals is not used but was designed to count number of 'True's (number of flicked switches)
+    // and report it back to level and graph on Main Activity
     public static int countCheckedGoals(){
         int m = 0;
         for (Goal goal : getGoals()){

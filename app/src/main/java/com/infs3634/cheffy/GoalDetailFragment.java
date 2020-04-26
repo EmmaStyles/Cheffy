@@ -1,24 +1,13 @@
 package com.infs3634.cheffy;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
-import static android.content.Context.MODE_PRIVATE;
-
+//Class for GoalDetailFragment
 public class GoalDetailFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
     private Goal mGoal;

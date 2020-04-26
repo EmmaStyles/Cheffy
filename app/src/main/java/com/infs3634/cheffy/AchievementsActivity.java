@@ -6,6 +6,7 @@ import android.util.Log;
 import android.os.Bundle;
 import android.widget.TextView;
 
+//Establishes AcievementsActivity
 public class AchievementsActivity extends AppCompatActivity {
     private String TAG = "AchievementsActivity";
     public TextView mLevel;
