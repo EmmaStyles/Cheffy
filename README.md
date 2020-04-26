@@ -1,4 +1,4 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~ Hello and welcome to Cheffy! ~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hello and welcome to Cheffy!
 
 Here we have created a prototype for the habit-creating cooking app Cheffy. It contains recipes and
 goals to encourage users to make a habit out of cooking!
