@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         recipeButton = findViewById(R.id.recipesButton);
         achievementsButton = findViewById(R.id.btnAchievements);
         mLevel = findViewById(R.id.tvLevel);
+        //CRPV code from https://github.com/timqi/SectorProgressView.git
         crpv = findViewById(R.id.crpv);
 
         //To set graph and level on main activity
